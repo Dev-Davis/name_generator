@@ -25,41 +25,34 @@ def name_options():
 
 def input_options(num_selection):
     match num_selection:
-            case 1:
-                # show total number of names
-                file = open('names.txt', 'r')
-                names = file.readlines()
-                file.close()
-                print(f"There are {len(names)} names in the file")
-                time.sleep(1)
-
-                print("")
-            case 2:
-                # add new name to the file
-                new_name = input("Input a new name to add: ")
-                file = open('names.txt', 'a')
-                file.write(new_name + "\n")
-                print(f"{new_name} was added")
-                file.close()
-
-                # names.append(new_name)
-
-                # file = open('names.txt',  'w')
-                # file.writelines(names)
-                # print(f"{new_name} was added")
-                # file.close()
-                time.sleep(1)
-            case 3:
-                # select a random name
-                file = open('names.txt', 'r')
-                names = file.readlines()
-                # for name in names:
-                print(random.choice(names))
-                time.sleep(1)
-            case 4:
-                # exit
-                print("Thank you for using name generator")
-                sys.exit()
+        case 1:
+            # show total number of names
+            file = open('names.txt', 'r')
+            names = file.readlines()
+            file.close()
+            print(f"There are {len(names)} names in the file")
+            print("")
+            time.sleep(1)
+        case 2:
+            # add new name to the file
+            new_name = input("Input a new name to add: ")
+            file = open('names.txt', 'a')
+            file.write(new_name + "\n")
+            file.close()
+            print(f"{new_name} was added")
+            print("")
+            time.sleep(1)
+        case 3:
+            # select a random name
+            file = open('names.txt', 'r')
+            names = file.readlines()
+            print(random.choice(names))
+            print("")
+            time.sleep(1)
+        case 4:
+            # exit
+            print("Thank you for using name generator")
+            sys.exit()
 
 
 while True:
