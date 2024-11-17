@@ -1,5 +1,5 @@
 import random
-import time
+import time, sys
 
 print("This is Name Generator")
 print("")
@@ -57,7 +57,8 @@ def input_options(num_selection):
                 time.sleep(1)
             case 4:
                 # exit
-                print("exit")
+                print("Thank you for using name generator")
+                sys.exit()
 
 
 while True:
