@@ -36,17 +36,18 @@ def input_options(num_selection):
                 print("")
             case 2:
                 # add new name to the file
-                new_name = input("Input a new name to add: ") + "\n"
-                file = open('names.txt', 'r')
-                names = file.readlines()
-                file.close()
-
-                names.append(new_name)
-
-                file = open('names.txt',  'w')
-                file.writelines(names)
+                new_name = input("Input a new name to add: ")
+                file = open('names.txt', 'a')
+                file.write(new_name + "\n")
                 print(f"{new_name} was added")
                 file.close()
+
+                # names.append(new_name)
+
+                # file = open('names.txt',  'w')
+                # file.writelines(names)
+                # print(f"{new_name} was added")
+                # file.close()
                 time.sleep(1)
             case 3:
                 # select a random name
