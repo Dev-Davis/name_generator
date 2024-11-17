@@ -1,14 +1,19 @@
 import random
-import time, sys
+import sys
+import time
+
+import name_variations
 
 print("This is Name Generator")
 print("")
 
+#  ----- To do list ----- #
 #  user can select options
 #  show total number of names
 #  add a new name to the file
 #  select a random name from the file
 #  exit
+#  clean up code
 
 
 def name_options():
@@ -26,29 +31,11 @@ def name_options():
 def input_options(num_selection):
     match num_selection:
         case 1:
-            # show total number of names
-            file = open('names.txt', 'r')
-            names = file.readlines()
-            file.close()
-            print(f"There are {len(names)} names in the file")
-            print("")
-            time.sleep(1)
+            name_variations.view_name_count()
         case 2:
-            # add new name to the file
-            new_name = input("Input a new name to add: ")
-            file = open('names.txt', 'a')
-            file.write(new_name + "\n")
-            file.close()
-            print(f"{new_name} was added")
-            print("")
-            time.sleep(1)
+            name_variations.create_name()
         case 3:
-            # select a random name
-            file = open('names.txt', 'r')
-            names = file.readlines()
-            print(random.choice(names))
-            print("")
-            time.sleep(1)
+            name_variations.random_name_view()
         case 4:
             # exit
             print("Thank you for using name generator")
